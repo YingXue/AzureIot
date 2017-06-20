@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Azure.Devices.Client;
@@ -17,6 +18,7 @@ namespace SimulatedDevice
             deviceClient = DeviceClient.Create(iotHubUri, new DeviceAuthenticationWithRegistrySymmetricKey("myFirstDevice", deviceKey), TransportType.Mqtt);
 
             SendDeviceToCloudMessagesAsync();
+            ReceiveC2dAsync();
             Console.ReadLine();
         }
 
@@ -46,7 +48,29 @@ namespace SimulatedDevice
                 await deviceClient.SendEventAsync(message);
                 Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, messageString);
 
-                await Task.Delay(1000);
+                await Task.Delay(100000);
+            }
+        }
+
+        private static async void ReceiveC2dAsync()
+        {
+            Console.WriteLine("\nReceiving cloud to device messages from service");
+            while (true)
+            {
+                Message receivedMessage = await deviceClient.ReceiveAsync();
+                
+                if (receivedMessage == null) continue;
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Received message: {0}", Encoding.ASCII.GetString(receivedMessage.GetBytes()));
+
+                foreach (var key in receivedMessage.Properties.Keys)
+                {
+                    Console.WriteLine("Received message key: {0}, value {1} ", key, receivedMessage.Properties[key]);
+                }
+                Console.ResetColor();
+
+                await deviceClient.CompleteAsync(receivedMessage);
             }
         }
     }
