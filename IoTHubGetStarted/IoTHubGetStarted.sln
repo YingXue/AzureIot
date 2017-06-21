@@ -11,6 +11,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimulatedDevice", "Simulate
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendCloudToDevice", "SendCloudToDevice\SendCloudToDevice.csproj", "{D37CEB63-5A25-4F8E-BA9F-748C9D0F65A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadCriticalQueue", "ReadCriticalQueue\ReadCriticalQueue.csproj", "{EE30C0DE-0C2E-40F3-9565-D36BF98439E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{006035F0-9FFE-4ECC-803C-1DDA28348A40}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\image.jpg = ..\..\image.jpg
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadFileUploadNotification", "ReadFileUploadNotification\ReadFileUploadNotification.csproj", "{106E4B85-61A0-4872-9419-1DA5094D188A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +42,14 @@ Global
 		{D37CEB63-5A25-4F8E-BA9F-748C9D0F65A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D37CEB63-5A25-4F8E-BA9F-748C9D0F65A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D37CEB63-5A25-4F8E-BA9F-748C9D0F65A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE30C0DE-0C2E-40F3-9565-D36BF98439E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE30C0DE-0C2E-40F3-9565-D36BF98439E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE30C0DE-0C2E-40F3-9565-D36BF98439E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE30C0DE-0C2E-40F3-9565-D36BF98439E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{106E4B85-61A0-4872-9419-1DA5094D188A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{106E4B85-61A0-4872-9419-1DA5094D188A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{106E4B85-61A0-4872-9419-1DA5094D188A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{106E4B85-61A0-4872-9419-1DA5094D188A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
